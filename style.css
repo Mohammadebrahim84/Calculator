@@ -1,0 +1,80 @@
+body 
+
+{
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.rain 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 0;          
+}
+
+.drop 
+{
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: fall linear infinite;
+    bottom: 100%;
+}
+
+@keyframes fall 
+{
+    to 
+    {
+        transform: translateY(110vh);
+    }
+
+}
+
+
+.calculator 
+{
+    display: grid;
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+    grid-template-columns: repeat(4, 80px);
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    gap: 1rem;
+}
+
+.calculator button 
+{
+    border: none;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator button:active 
+{
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
